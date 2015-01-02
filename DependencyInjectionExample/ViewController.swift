@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-    
+
     // MARK: UITableViewDataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,14 +33,15 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let minion = dataSource?[indexPath.row]
         
         let cell = tableView.dequeueReusableCellWithIdentifier("minionCell") as UITableViewCell
         
-        cell.textLabel?.text = minion?.name
+        if let minion = dataSource?[indexPath.row] {
+            cell.textLabel?.text = minion.name
+            cell.imageView?.image = UIImage(named: minion.name)
+        }
         
         return cell
-        
     }
 
 }

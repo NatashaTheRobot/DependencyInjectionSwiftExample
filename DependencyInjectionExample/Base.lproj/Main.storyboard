@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="minionCell" textLabel="th6-6s-l8b" style="IBUITableViewCellStyleDefault" id="RRY-BM-zjQ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="minionCell" textLabel="th6-6s-l8b" style="IBUITableViewCellStyleDefault" id="RRY-BM-zjQ">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RRY-BM-zjQ" id="4KZ-AX-MeF">
                                     <autoresizingMask key="autoresizingMask"/>
