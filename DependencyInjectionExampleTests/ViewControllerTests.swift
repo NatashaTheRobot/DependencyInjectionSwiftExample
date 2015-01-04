@@ -42,7 +42,7 @@ class ViewControllerTests: XCTestCase {
         XCTAssertTrue(fakeMinionService.getTheMinionsWasCalled)
         
         if let dataSource = viewController.dataSource {
-            XCTAssertEqual(fakeMinionService.result, viewController.dataSource!)
+            XCTAssertEqual(fakeMinionService.result, dataSource)
         } else {
             XCTFail("Data Source should not be nil!!!")
         }
