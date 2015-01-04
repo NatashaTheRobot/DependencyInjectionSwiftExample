@@ -19,10 +19,19 @@ class ViewController: UITableViewController {
     }
     
     func fetchMinions(minionService: MinionService = MinionService()) {
-        minionService.getTheMinions { [unowned self](minions) -> Void in
+        minionService.getTheMinions { [unowned self](minionDataResult) -> Void in
             println("Show all the minions!")
-            self.dataSource = minions
-            self.tableView.reloadData()
+            switch (minionDataResult) {
+            case .Success(let minionsData):
+                self.dataSource = minionsData
+                self.tableView.reloadData()
+            case .Failure(let error):
+                let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
+                alertController.addAction(okAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+            
         }
     }
 

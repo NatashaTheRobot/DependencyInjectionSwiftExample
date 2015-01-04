@@ -18,9 +18,9 @@ class ViewControllerTests: XCTestCase {
         var getTheMinionsWasCalled = false
         var result = [Minion(name: "Bob"), Minion(name: "Dave")]
         
-        override func getTheMinions(completionHandler: ([Minion]) -> Void) {
+        override func getTheMinions(completionHandler: (MinionDataResult) -> Void) {
             getTheMinionsWasCalled = true
-            completionHandler(result)
+            completionHandler(MinionDataResult.Success(result))
         }
     }
     

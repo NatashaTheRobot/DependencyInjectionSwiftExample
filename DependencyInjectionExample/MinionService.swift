@@ -6,12 +6,19 @@
 //  Copyright (c) 2015 NatashaTheRobot. All rights reserved.
 //
 
+import Foundation
+
 class MinionService {
     
-    func getTheMinions(completionHandler: ([Minion]) -> Void) {
+    enum MinionDataResult {
+        case Success([Minion])
+        case Failure(NSError)
+    }
+    
+    func getTheMinions(completionHandler: (MinionDataResult) -> Void) {
         println("getting minions assynchronously")
-        let result = [Minion(name: "Bob"), Minion(name: "Dave")]
-        completionHandler(result)
+        let minionData = [Minion(name: "Bob"), Minion(name: "Dave")]
+        completionHandler(MinionDataResult.Success(minionData))
     }
     
 }
