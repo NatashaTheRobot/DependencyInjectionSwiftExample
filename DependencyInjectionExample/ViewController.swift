@@ -20,7 +20,6 @@ class ViewController: UITableViewController {
     
     func fetchMinions(minionService: MinionService = MinionService()) {
         minionService.getTheMinions { [unowned self](minionDataResult) -> Void in
-            println("Show all the minions!")
             switch (minionDataResult) {
             case .Success(let minionsData):
                 self.dataSource = minionsData

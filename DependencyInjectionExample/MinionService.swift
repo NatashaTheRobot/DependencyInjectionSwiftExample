@@ -18,6 +18,7 @@ class MinionService {
     func getTheMinions(completionHandler: (MinionDataResult) -> Void) {
         println("getting minions assynchronously")
         let minionData = [Minion(name: "Bob"), Minion(name: "Dave")]
+        let error = NSError(domain: "Error", code: 400, userInfo: [NSLocalizedDescriptionKey : "Oops! The Minions are missing on a new fun adventure!"])
         completionHandler(MinionDataResult.Success(minionData))
     }
     

@@ -30,7 +30,7 @@ class ViewControllerTests: XCTestCase {
         let navigationController = storyboard.instantiateInitialViewController() as UINavigationController
         viewController = navigationController.topViewController as ViewController
         
-        UIApplication.sharedApplication().keyWindow!.rootViewController = viewController
+        UIApplication.sharedApplication().keyWindow!.rootViewController = navigationController
         NSRunLoop.mainRunLoop().runUntilDate(NSDate())
     }
     
