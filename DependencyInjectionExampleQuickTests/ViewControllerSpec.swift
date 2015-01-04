@@ -36,9 +36,7 @@ class ViewControllerSpec: QuickSpec {
             UIApplication.sharedApplication().keyWindow!.rootViewController = navigationController
             NSRunLoop.mainRunLoop().runUntilDate(NSDate())
         }
-        
-        
-        
+
         describe(".fetchMinions") {
             context("Minions are fetched successfully") {
                 it("sets the minions as the data source") {
@@ -66,7 +64,5 @@ class ViewControllerSpec: QuickSpec {
                 }
             }
         }
-
     }
-
 }
